@@ -17,4 +17,6 @@ module.exports.router = (req, res, next = ()=>{}) => {
   res.writeHead(200, headers);
   res.end();
   next(); // invoke next() at the end of a request to help with testing!
+  // in this function was where Fred said we'd probably need to set up an array
+  // and a way to randomly choose an element in that array to enqueue
 };

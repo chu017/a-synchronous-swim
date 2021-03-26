@@ -23,6 +23,7 @@ describe('server responses', () => {
 
   it('should respond to a GET request for a swim command', (done) => {
     // write your test here
+    // first bullet point in bare mins is right here
     done();
   });
 

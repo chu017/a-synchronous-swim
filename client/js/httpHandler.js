@@ -4,6 +4,8 @@
 
   //
   // TODO: build the swim command fetcher here
+  // AJAXGET or $get -
+  // need to set URL in ajaxFileUpload to serverUrl above
   //
 
   /////////////////////////////////////////////////////////////////////
