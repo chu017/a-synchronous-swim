@@ -2,26 +2,21 @@
 
   const serverUrl = 'http://127.0.0.1:3000';
 
-  console.log('sam url', serverUrl);
-
-
   var fetch = () => {$.ajax({
     type: 'GET',
     url: 'http://127.0.0.1:3000',
     cache: false,
     contentType: false,
     processData: false,
-    success: () => {
-      // reload the page
-      console.log('it worked');
-      // link the data (up or down) to the swimmer
+    success: (data) => {
+      SwimTeam.move(data);
     }
   })}
   fetch();
 
   setInterval(function() {
     fetch();
-  }, 15000);
+  }, 10000);
 
   //
   // TODO: build the swim command fetcher here
