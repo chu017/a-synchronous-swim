@@ -41,12 +41,6 @@ describe('server responses', () => {
 
     done();
   });
-  // expect(res._data.toString()).to.have.lengthOf(1);
-  // expect(res._data.toString()).to.equal('up' || 'left' || 'right' || 'down');
-  // expect(res._data.toString()).to.equal('down');
-  // expect(res._data.toString()).to.equal('left');
-  // expect(res._data.toString()).to.equal('right);
-
 
   xit('should respond with 404 to a GET request for a missing background image', (done) => {
     httpHandler.backgroundImageFile = path.join('.', 'spec', 'missing.jpg');
