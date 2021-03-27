@@ -16,21 +16,26 @@ module.exports.initialize = (queue) => {
 
 module.exports.router = (req, res, next = ()=>{}) => {
   console.log('Serving request type ' + req.method + ' for url ' + req.url);
+
+  // fs.readFile('/background.jpg', (err, data) => {
+  //   console.log(err, data);
+  //   if (err) {
+  //     res.writeHead(404, headers)
+  //   }
+  // });
+
   res.writeHead(200, headers);
-
-  // commands array of messages
-  // store all our messages inside queue
-  // Temp storage here as same as commands to store message from deque
-  // write they up to client
-
+  // fs.readFile('background.jpg', function(err) {
+  //   if (err) {
+  //     res.writeHead(404, headers);
+  //   }
+  //   res.writeHead(200, headers);
+  // })
 
   var commands = ['up', 'down', 'left', 'right'];
   var respond = _.shuffle(commands);
-  // need to write something for POST request
-  // will include enqueueing the data
-  //
-  if (req.method === 'GET') {
 
+  if (req.method === 'GET') {
     var command = queue.dequeue();
     if (command) {
       res.write(command)
