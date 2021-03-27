@@ -1,12 +1,34 @@
-(function() {
+(function() { // put this script in html ---?
 
   const serverUrl = 'http://127.0.0.1:3000';
 
+  console.log('sam url', serverUrl);
+
+
+  var fetch = () => {$.ajax({
+    type: 'GET',
+    url: 'http://127.0.0.1:3000',
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: () => {
+      // reload the page
+      console.log('it worked');
+      // link the data (up or down) to the swimmer
+    }
+  })}
+  fetch();
+
+  setInterval(function() {
+    fetch();
+  }, 15000);
+
   //
   // TODO: build the swim command fetcher here
-  // AJAXGET or $get -
-  // need to set URL in ajaxFileUpload to serverUrl above
+  // setInterval {
+  //   $get
   //
+
 
   /////////////////////////////////////////////////////////////////////
   // The ajax file uplaoder is provided for your convenience!
@@ -19,7 +41,7 @@
     $.ajax({
       type: 'POST',
       data: formData,
-      url: 'FILL_ME_IN',
+      url: 'http://127.0.0.1:3000',
       cache: false,
       contentType: false,
       processData: false,
@@ -29,7 +51,6 @@
       }
     });
   };
-
 
   $('form').on('submit', function(e) {
     e.preventDefault();
