@@ -3,9 +3,12 @@
 
 const keypressHandler = require('./js/keypressHandler');
 keypressHandler.initialize(message => console.log(`Message received: ${message}`));
+// directly from the keyboard to the server through the terminal
+// message enqueued - need to make this happen
 
 const httpHandler = require('./js/httpHandler');
-
+// specifically for handling client request to enter a keypress
+// message enqueued - need to make this happen
 
 const http = require('http');
 const server = http.createServer(httpHandler.router);
